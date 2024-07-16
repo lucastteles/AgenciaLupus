@@ -1,0 +1,2346 @@
+body {
+    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #00010c;
+    overflow-x: hidden;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    
+} 
+
+/* *{
+  line-height: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: inherit;
+  overflow-x: hidden;
+
+} */
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+/* .background {
+    background-image:linear-gradient(269.2deg,#431D5C 13.54%,#2D285E 50.52%,#17356D 85.94%);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+} */
+
+
+.background {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/2213144-invertida.jpg);; /* Insira o caminho para sua imagem de fundo */
+  opacity: 0.3; /* Defina a opacidade desejada */
+  z-index: -1; /* Certifique-se de que o pseudo-elemento esteja atrás do conteúdo */
+  background-size: cover;
+  background-position: center;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(269.2deg, #431D5C 13.54%, #2D285E 50.52%, #17356D 85.94%);
+  z-index: -2; /* Garanta que o gradiente esteja atrás de tudo */
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* padding: 5px 100px; */
+    padding: 3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999;
+    overflow-y: hidden;
+    
+    
+    
+}
+
+.logo {
+    width: 80px;
+    height: auto; 
+    object-fit: cover;  
+    transform: scale(2.7); 
+        
+}
+
+
+header .navegacao a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property:background;
+    
+}
+
+header .navegacao {
+overflow-y: hidden; 
+}
+
+header .navegacao .btn-contato {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: 9px;
+    font-size: 1.7rem;
+    color: #fff;
+    cursor: pointer;
+    border-color: #b5b5b5; /* Mudança da cor da borda para vermelho */
+    border-style: solid; /* Adicionando um estilo de borda sólida */
+    border-width: 1px; /* Definindo a largura da borda como 2px */
+    text-decoration: none;
+}
+
+
+header .navegacao  .btn-contato:hover{
+    background-color: #1e588e;
+    color: #fff;
+}
+
+header .navegacao a:not(:last-child){
+    margin-right: 30px;
+}
+
+
+
+header .navegacao a:hover{
+  color: #FAAF3B;
+}
+
+label{
+  display: none;
+  
+}
+
+#check{
+  z-index: 3;
+  display: none;
+}
+
+
+
+/****************BLUSH*********************/
+.background .blush{
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(#0062ae , transparent 50%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.background .blush.um{
+  bottom: -300px;
+  left: -300px;
+  animation: blushOpacidade 10s linear infinite ;
+}
+
+.background .blush.dois{
+  top: -500px;
+  right: -400px;
+  animation: blushOpacidade 10s linear infinite ;
+}
+
+
+ @keyframes blushOpacidade{
+  0%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+
+  50%{
+    opacity: 0.9;
+    transform:scale(1.8);
+  }
+  100%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+}  
+
+
+.background{
+  position: relative;
+  }
+
+
+/****Responsivo*****/
+@media(max-width:960px){
+
+  header{
+   position: relative;
+   padding: 8rem 30%;
+
+}
+
+.logo{
+  transform: scale(2.2); 
+}
+
+
+  header .navegacao{
+      display: none;
+  }
+
+  header img{
+      margin-left: -66px;
+  }
+
+  label{
+      display: block;
+      font-size: 25px;
+      cursor: pointer;
+      transition-property: color;
+      margin-left: 196px;
+  }
+
+  label{
+      color: #fff;
+  }
+
+  label:hover{
+      color:#fff
+
+  }
+
+  label .close-btn{
+      display: none;
+  }
+
+  #check:checked ~ header .navegacao{
+      z-index: 2;
+      position: fixed;
+      background: rgba(13, 129, 244, 0.9); 
+    
+      top: 0;
+      left: 0;
+      bottom: 0;
+      left: 40%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #check:checked ~ header .navegacao a{
+      font-weight: 700;
+      margin-right: 0;
+      margin-bottom: 50;
+      letter-spacing: 2px;
+
+  }
+
+  #check:checked ~ header label .menu-btn{
+      display: none;
+  }
+
+  #check:checked ~ header label .close-btn{
+      z-index: 2;
+      display: block;
+      position: fixed;
+  }
+
+  label .menu-btn{
+      position: absolute;
+  }
+
+  header .logo{
+      position: absolute;
+      bottom: -6px;
+      
+  }
+
+  header .navegacao .btn-contato{
+      display: none;
+  }
+
+
+
+/********blush Responsivo**********/
+
+
+  .background .blush{
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  
+  .background .blush.um{
+    bottom: -300px;
+    left: -300px;
+    animation: blushOpacidade 10s linear infinite ;
+  }
+  
+  .background .blush.dois{
+    top: 590px;
+    left: 190px;
+    animation: blushOpacidade 10s linear infinite ;
+  }
+
+
+
+
+  
+ @keyframes blushOpacidade{
+  0%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+
+  50%{
+    opacity: 0.9;
+    transform:scale(1.3);
+  }
+  100%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+} 
+  
+  
+  .background{
+    position: relative;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************************************/
+
+
+
+.inicio{
+    padding: 1rem 5%;
+}
+
+.inicio{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.inicio .content{
+    flex: 1 1 40rem;
+    padding: 6.5em;
+   
+}
+
+.inicio .content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fff;  
+    background: linear-gradient(135deg, #5b287d, #322b6b, #0a0132);
+    border-radius: 5px;
+    transition: 0.6s;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+    z-index: 9999;
+    /* position: relative; */
+    position: relative;
+    z-index: 99999;
+}
+
+/* .inicio .content .btn:hover {
+    background: linear-gradient(90deg, #0b1e43, #322b6b, #5b287d);
+} */
+
+
+.inicio .content .btn:active {
+  scale: 0.92;
+  position: relative;
+  z-index: 99999;
+}
+
+.inicio .content .btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+  position: relative;
+  z-index: 99999;
+}
+
+
+
+
+
+.inicio .content .titulo {
+    margin-bottom: 20px;
+    /* margin-top: -300px; */
+    
+}
+
+.inicio .content .titulo{
+    font-size: 6rem;
+    color: #fff;
+}
+
+.inicio .content .agilidade{
+    font-size: 1.5rem;
+    color: #b5b5b5;
+}
+
+.inicio .image{
+    flex: 1 1 40rem;
+        /* z-index: 999999; */
+}
+
+.inicio .image img{
+    width: 100%;
+    /* transform: scale(1.9); */
+}
+
+
+
+@media(max-width:968px){
+  
+  html{
+      font-size: 50%;
+  }
+
+  .inicio .content .titulo{
+      font-size: 4rem;
+  }
+
+  .inicio{
+    margin-top: -100px;
+}
+
+  .inicio .image{
+      flex: 1 1 40rem;
+      margin-bottom: 190px;         
+  }
+
+  .inicio .image {
+    transform: scale(1.0); /* torna a imagem 50% do tamanho original */
+}
+
+  
+}
+
+
+@media(max-width:450px){
+  html{
+      font-size: 40%;
+  }
+
+  .inicio .image{
+      flex: 1 1 40rem;
+      margin-bottom: 190px;           
+  }
+
+  .inicio .image {
+    transform: scale(1.0); /* torna a imagem 50% do tamanho original */
+}
+
+  .inicio{
+      padding: 12rem 5%;
+  }
+
+  
+} 
+
+
+
+
+
+/********************************************************************/
+
+
+.fazemos{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+ 
+    justify-content: flex-start;
+    /* background-image:linear-gradient(269.2deg,#17356D 13.54%,#2D285E 50.52%,#17356D 85.94%);   */
+    background-image:linear-gradient(269.2deg,#17356D 13.54%,#2D285E 50.52%,#17356D 85.94%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.conheca{
+
+  z-index: 1;
+}
+
+
+.section-conheca {
+    padding: 2rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    position: relative;
+    overflow-y: hidden;
+  }
+
+  .section-conheca .conheca{
+    flex: 1 1 40rem;  /*******DIMINUIR O LAOD DIREITO DA SECTION    10rem********/
+    padding: 1.5em; /****************************************ATENÇÃAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO**********************************************************************/
+    order: 2;
+  }
+
+
+  .titulo-conheca{
+    padding: 1em;
+    font-size: 6rem;
+    color: #fff;
+    text-align: center; 
+  }
+
+  .titulo-conheca span{
+    background: linear-gradient(269.2deg,#4dbad6 13.54%,#348cf4 50.52%,#7b48e8 85.94%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .section-conheca .conheca .sobre-nos{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #b5b5b5;
+    font-weight: bold;
+    
+  }
+ 
+  .section-conheca .conheca .sobre-nosdois{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #b5b5b5;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+
+
+
+
+  .section-conheca .Lading-pages{
+    /* flex: 1 1 40rem; */
+    padding: 2.5em;
+    order: 2;
+    background: #0b1e434d;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 0px 0px #a7b0b87c;
+    
+  }
+
+
+  .titulo-lading{
+    font-size: 4rem;
+    color: #fff;
+    text-align: left;
+  }
+
+
+  .section-conheca .Lading-pages .sobre-lading{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #959595;
+    font-weight: bold;
+   
+  }
+
+
+  .Lading-pages {
+    margin-bottom: 20px; /* Define a margem inferior */
+  }
+
+
+
+  /****************/
+  .section-conheca .Web-site{
+    /* flex: 1 1 40rem; */
+    padding: 2.5em;
+    order: 2;
+    background: #0b1e434d;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 0px 0px #a7b0b87c;
+   
+  }
+
+
+  .titulo-web{
+    font-size: 4rem;
+    color: #fff;
+    text-align: left;
+  }
+
+
+  .section-conheca .Web-site .sobre-web{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #959595;
+    font-weight: bold;
+  }
+
+
+  
+
+  /****************/
+
+
+
+
+
+
+  .section-conheca .conheca .sobre-nos span{
+    text-transform: Uppercase;
+  }
+
+  .fazemos .sobre-img{
+    flex: 1 1 40rem;
+    order: 1;
+    padding: 22rem 5%;
+    transform: scale(1.3);
+    
+    /* transform: scale(1.3);     *//*******Aumentar imagem********/
+    /* margin-top: 190px; */
+  }
+
+  .fazemos .sobre-img img{
+    width: 100%;
+    z-index: 999;
+    
+  }
+
+
+  /*****************BLUSH******************/
+
+.section-conheca .blush{
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(#0062ae , transparent 50%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+.section-conheca .blush.um{
+  bottom: -90px;
+  left: -200px;
+  animation: blushOpacidade 10s linear infinite ;
+}
+
+.section-conheca .blush.dois{
+  top: -300px;
+  right: -200px;
+  animation: blushOpacidade 10s linear infinite ;
+}
+
+
+
+
+@media(max-width:768px){
+    .conheca{
+        font-size: 15px;
+        
+    }
+
+    .fazemos .sobre-img{
+      flex: 1 1 40rem;
+      order: 1;
+      padding: 0rem 0%;
+      
+      /* transform: scale(1.3);     *//*******Aumentar imagem********/
+      /* margin-top: 190px; */
+    }
+
+    .fazemos .sobre-img img{
+      transform: scale(0.9);
+      
+      }
+
+
+
+      /***************BLUSH RESPONSIVO*************/
+      .section-conheca .blush{
+        width: 1000px;
+        height: 1000px;
+        background: radial-gradient(#0062ae, transparent 50%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .section-conheca .blush.um{
+        top: -250px;
+        left: -280px;
+        animation: blushOpacidade2 10s linear infinite ;
+      }
+
+
+      @keyframes blushOpacidade2{
+        0%{
+          opacity: 0.2;
+          transform:scale(0.2);
+        }
+      
+        50%{
+          opacity: 0.9;
+          transform:scale(0.6);
+        }
+        100%{
+          opacity: 0.2;
+          transform:scale(0.2);
+        }
+      } 
+}
+
+@media(max-width:640px){
+    .fazemos .sobre-img img{
+      transform: scale(0.8);
+      margin-left: -18px;
+      margin-bottom: -20px;
+      }
+
+      .titulo-conheca{
+        font-size: 4.2rem;
+        justify-content: center;
+      }
+
+      .titulo-lading, .titulo-web{
+        font-size: 2.8rem;
+
+      }
+
+      .fazemos .sobre-img img{
+        width: 100%;
+        transform: scale(0.8);
+        margin-left: 0px;
+        
+        }
+
+     
+
+}
+
+
+
+
+
+
+.sobre-img{
+  z-index: 1;
+}
+
+
+
+/****************CONTRATAR***********************/
+.contratar{
+    padding: 12rem 5%;
+    background: linear-gradient(135deg, #0c0333, #322b6b, #0c0333);
+    overflow-y: hidden;
+    /* background-image:linear-gradient(269.2deg,#431D5C 13.54%,#2D285E 50.52%,#17356D 85.94%); */
+    
+}
+
+.contratar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contratar .content{
+    flex: 1 1 40rem;
+    padding: 6.5em;
+    overflow-y: hidden;
+}
+
+.contratar .content .btn{
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;  
+  background: linear-gradient(135deg, #5b287d, #322b6b, #0a0132);
+  border-radius: 5px;
+  transition: 0.6s;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  z-index: 9999;
+  /* position: relative; */
+  position: relative;
+  z-index: 99999;
+}
+
+.contratar .content .btn:active{
+  scale: 0.92;
+  position: relative;
+  z-index: 99999;
+}
+
+.contratar .content .btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+  position: relative;
+  z-index: 99999;;
+}
+
+
+
+.contratar .content .titulo {
+    margin-bottom: 10px
+}
+
+.contratar .content .titulo{
+    font-size: 5rem;
+    color: #fff;
+}
+
+
+
+/* .contratar .content p{
+    color: #b5b5b5;
+    font-size: 1.5rem;
+} */
+
+.contratar .tesp1{
+  color: #b5b5b5;
+  font-size: 1.6rem; 
+  padding: 1rem 0;
+}
+
+.contratar .tesp2{
+  color: #b5b5b5;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  
+  
+}
+
+
+
+
+
+.contratar .image{
+    flex: 1 1 40rem;
+    margin-bottom: -155px;  
+    overflow-y: hidden;   
+}
+
+.contratar .image img{
+    width: 100%;
+    transform: scale(1.9);
+}
+
+
+@media(max-width:968px){
+    html{
+        font-size: 50%;
+    }
+
+    .content{
+      margin-top: 100px;
+    }
+
+    .contratar{
+      padding: 16rem 5%;
+      max-height: 80vh;
+  }
+
+    .contratar .content .titulo{
+        font-size: 4rem;
+    }
+
+    .contratar .image{
+        flex: 1 1 40rem;
+        margin-bottom: -105px;  
+        transform: scale(1.0);      
+    }
+
+    
+
+    
+
+    
+}
+
+
+@media(max-width:450px){
+    html{
+        font-size: 40%;
+    }
+
+    .contratar .image{
+        flex: 1 1 40rem;
+        margin-bottom: -10px;           
+    }
+
+    .contratar{
+        padding: 16rem 5%;
+        max-height: 85vh;
+    }
+
+
+    .content{
+      margin-top: 10px;
+    }
+
+    
+} 
+
+
+
+
+
+
+/*************TESTE****************/
+
+/* .container {
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    margin: 20px auto;
+  } */
+
+
+  .container-principal{
+    background: linear-gradient(135deg, #0c0333, #322b6b, #0c0333);
+    overflow-y: hidden;
+  }
+
+  .titulo-atendemos{
+    color: #fff;
+    padding: 12rem 6%;
+    font-size: 4rem;
+    position: relative;
+    z-index: 999;
+
+  }
+
+
+  
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 85vh;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+
+  .card {
+    width: 100%; /* 80% da largura da tela */
+    max-width: 400px; /* Máximo de 400 pixels */
+    min-width: 200px; /* Mínimo de 200 pixels */
+    margin: 5px; /* Centralize o card na tela */
+    
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 -3px 0px 0px #a7b0b87c;
+    background: #0b1e434d;
+    /* position: relative;
+    z-index: 998; */
+    position: relative;
+    z-index: 998;
+    
+  }
+
+  .titulo-card{
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    z-index: 997;
+  }
+
+  .card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #0a1141, #348cf4, #2d398f); /* Aplicando o gradiente como fundo */
+    -webkit-background-clip: text; /* Isso é necessário para aplicar o gradiente apenas ao texto no Safari */
+    -webkit-text-fill-color: transparent; /* Faz com que o texto herde a cor do plano de fundo, tornando-o visível */
+}
+
+  .card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #b2b2b2;
+    position: relative;
+    z-index: 99999;
+  }
+
+
+  .centered-button {
+    text-align: center;
+    margin-bottom: 50px;
+    
+  }
+  
+  .orcamento {
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 1.5rem 8rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #5b287d, #322b6b, #0a0132);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+    z-index: 9999;
+    /* position: relative; */
+    position: relative;
+    z-index: 99999;
+  }
+  
+  .orcamento:active {
+    scale: 0.92;
+    position: relative;
+    z-index: 99999;
+  }
+  
+  .orcamento:hover {
+    background: rgb(2,29,78);
+    background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+    position: relative;
+    z-index: 99999;
+  }
+
+
+
+/********BLUSH*********/
+.container-principal{
+  position: relative;
+  }
+
+  .container{
+    z-index: 1;
+  }
+
+  
+  
+  .container-principal .blush{
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  
+  .container-principal .blush.um{
+    bottom: -80px;
+    left: -300px;
+    animation: blushOpacidade3 10s linear infinite ;
+  }
+  
+  .container-principal .blush.dois{
+    top: 0px;
+    right: -200px;
+    animation: blushOpacidade3 10s linear infinite ;
+  }
+  
+  
+   @keyframes blushOpacidade3{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(1.3);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  } 
+
+/***************imagem de fundo******************/
+.container-principal .paraquem  img{
+  width: 1000px;
+  height: 900px;
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: -300px;
+  z-index: 1;
+  opacity: 0.4;
+  filter: blur(5px); /* Adicionando um desfoque de 5 pixels */
+}
+
+.container-principal .paraquem2  img{
+  width: 1000px;
+  height: 900px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: -350px;
+  opacity: 0.4;
+  filter: blur(3px); /* Adicionando um desfoque de 5 pixels */
+  z-index: 1;
+}
+
+
+@media(max-width:968px){
+  
+    html{
+        font-size: 50%;
+    }
+  
+    .container{
+    padding: 4rem 5%;   
+    }
+  
+  
+    .card  {
+      font-size: 40px;
+      margin-bottom: 16px;
+  } 
+
+  .container-principal .paraquem  img{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    z-index: 2;
+    bottom: -120px;
+    left: -400px;
+    opacity: 0.4;
+    filter: blur(3px);
+    transform: scale(0.5);    
+  
+  }
+  
+  .container-principal .paraquem2  img{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    right: -450px;
+    opacity: 0.4;
+    filter: blur(3px); /* Adicionando um desfoque de 5 pixels */
+    z-index: 1;
+    transform: scale(0.5);  
+    
+  }
+/************BLUSH RESPONSIVO******************/
+
+  .container-principal{
+    position: relative;
+    }
+  
+    .container{
+      z-index: 1;
+    }
+  
+    
+    
+    .container-principal .blush{
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(#0062ae , transparent 50%);
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+    }
+    
+    
+    .container-principal .blush.um{
+      bottom: -220px;
+      left: -270px;
+      animation: blushOpacidade3 10s linear infinite ;
+    }
+    
+    .container-principal .blush.dois{
+      top: -220px;
+      right: -205px;
+      animation: blushOpacidade3 10s linear infinite ;
+    }
+    
+    
+     @keyframes blushOpacidade3{
+      0%{
+        opacity: 0.2;
+        transform:scale(0.2);
+      }
+    
+      50%{
+        opacity: 0.9;
+        transform:scale(0.9);
+      }
+      100%{
+        opacity: 0.2;
+        transform:scale(0.2);
+      }
+    } 
+
+
+  
+  
+
+  
+}
+
+
+@media(max-width:450px){
+  html{
+      font-size: 50%;
+  }
+
+  .container{
+  padding: 4rem 5%;   
+  }
+
+
+  .card  {
+    font-size: 40px;
+    margin-bottom: 16px;
+} 
+
+.container-principal .paraquem  img{
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  z-index: 2;
+  bottom: -100px;
+  left: -400px;
+  opacity: 0.4;
+  filter: blur(3px);
+  transform: scale(0.5);    
+
+}
+
+.container-principal .paraquem2  img{
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: -450px;
+  opacity: 0.4;
+  filter: blur(3px); /* Adicionando um desfoque de 5 pixels */
+  z-index: 1;
+  transform: scale(0.5);  
+  
+}
+
+/************BLUSH RESPONSIVO******************/
+/* .container-principal{
+  position: relative;
+  }
+
+  .container{
+    z-index: 1;
+  }
+
+  
+  
+  .container-principal .blush{
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  
+  .container-principal .blush.um{
+    bottom: -220px;
+    left: -270px;
+    animation: blushOpacidade3 10s linear infinite ;
+  }
+  
+  .container-principal .blush.dois{
+    top: -220px;
+    right: -205px;
+    animation: blushOpacidade3 10s linear infinite ;
+  }
+  
+  
+   @keyframes blushOpacidade3{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(0.9);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  }  */
+
+
+}
+
+
+
+
+
+
+
+
+/******************************/
+.portifolio{
+  background-color: #202c49;
+  max-height: 120vh;
+  padding: 6rem;
+  z-index: 994;
+  overflow-y: hidden;
+}
+
+
+
+/* .container-principal{
+    background-color: #202c49;
+    margin-bottom: 50px;
+
+  } */
+
+  .central-fotos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+  }
+
+  .titulo-fotos{
+    color: #fff;  
+    font-size: 4rem;
+
+  }
+
+  .centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 80px;
+    color: #fff;
+  }
+
+
+  
+  .container-img{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 65vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 994;
+   
+    
+    
+  }
+ 
+
+  .card-img img{
+    width: 100%;
+    height: 30vh;
+    flex: 0 0 30%;
+    background-color: #3520a0;
+    border-radius: 20px;
+    box-shadow: 0 -8px 0px 0px #237dcc7c;
+    
+  }
+
+  .portifolio-linha {
+    width: 100%;
+    border: 0;
+    margin: 20px auto;
+    margin-top: 110px;
+    position: relative;
+    z-index: 999;
+    background-image: linear-gradient(to right, #237dcc7c, #fff, #237dcc7c); 
+    height: 1px; /* Mantém a altura da linha */
+    position: relative;
+    z-index: 999;
+}
+
+  /**************BLUSH*******************/
+  .portifolio .blush{
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .portifolio .blush.um{
+    bottom: 1360px;
+    left: -500px;
+    animation: blushOpacidade5 10s linear infinite ;
+  }
+
+
+  @keyframes blushOpacidade5{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(0.9);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  } 
+
+
+  @media(max-width:968px){
+  
+    html{
+        font-size: 50%;
+    }
+  
+   
+  
+  
+    .card img{
+      font-size: 40px;
+      margin-bottom: 16px;
+  } 
+  
+  .portifolio{
+    max-height: 238vh;
+  }
+
+  .portifolio .blush{
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .portifolio .blush.um{
+    bottom: 2360px;
+    left: -240px;
+    animation: blushOpacidade5 10s linear infinite ;
+  }
+
+
+  @keyframes blushOpacidade5{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(0.9);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  } 
+
+  
+}
+
+
+@media(max-width:450px){
+  html{
+      font-size: 50%;
+  }
+
+  .portifolio{
+  padding: 4rem 5%; 
+
+   
+  }
+
+  .card-img{
+    font-size: 40px;
+    margin-bottom: 16px;
+} 
+
+
+}
+
+
+
+
+
+  /*************TESTE***********/
+
+  .depoimentos {
+    padding: 20px;
+    background-color: #202c49;
+    min-height: 85vh;
+    overflow-y: hidden;
+    
+  }
+
+
+
+  
+  /* .depoimentos h2 {
+    margin-top: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 12rem 5%;
+    
+  }
+   */
+
+  .teste-sub{
+    font-size: 2rem;
+    padding: 12rem 5%;
+    margin-bottom: -220px;
+    color: #93cdff7c;
+    position: relative;
+    z-index: 998;
+    
+
+   }
+
+  .depoimentos h3 {
+    font-size: 4rem;
+    padding: 12rem 5%;
+    margin-bottom: -160px;
+    color: #fff;
+    position: relative;
+    z-index: 997;
+   
+  }
+  
+
+
+  .carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+    padding: 0rem 5%;
+    position: relative;
+    z-index: 999;
+  }
+  
+  .carousel .item {
+    flex-shrink: 0;
+    margin-right: 20px;
+    padding: 20px;
+    background: #0b1e434d;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    -webkit-scroll-snap-align: center;
+    width: 40%;
+    z-index: 99999999;
+    
+  }
+  
+  .carousel .item .content {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .carousel .item img {
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 10px; /* Adiciona espaço entre a imagem e o texto */
+    margin-bottom: 15px;
+    
+  }
+  
+  .carousel .item p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #ada9a9;
+  }
+  
+
+  .carousel .item p.autor {
+    font-size: 14px;
+    font-style: italic;
+    color: #ada9a9
+  }
+
+  .carousel .item p.autor span {
+    font-size: 14px;
+    font-style: italic;
+    color: #fff;
+   
+  }
+
+ 
+
+
+/******TESTE******/
+
+
+
+  .carousel-container {
+    display: flex;
+    justify-content: right; /* Coloca os botões nos extremos */
+    align-items: center; /* Alinha verticalmente */
+    padding: 0rem 5%;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 999;
+    
+}
+
+.btn-carousel {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    z-index: 999;
+}
+
+/* Adicione estilos específicos para os botões prev e next, se necessário */
+.btn-prev {
+    margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.btn-next {
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+
+/***************BLUSH DEPOIMENTO************************/
+
+.depoimentos .blush{
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(#0062ae , transparent 50%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+
+
+.depoimentos .blush.dois{
+  bottom: 700px;
+  right: -450px;
+  animation: blushOpacidade4 10s linear infinite ;
+}
+
+@keyframes blushOpacidade4{
+  0%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+
+  50%{
+    opacity: 0.9;
+    transform:scale(0.9);
+  }
+  100%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+} 
+
+
+
+@media (max-width: 968px) {
+  .carousel .item {
+    width: 80%; /* Reduz ainda mais a largura do item do carrossel para telas muito pequenas */
+}
+
+.depoimentos  {
+  padding: 20px;
+  font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+  margin-top: -990px;
+  max-height: 190vh;
+}
+
+  .depoimentos h3  {
+    padding: 20px;
+    font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+    margin-bottom: -120px;
+    
+  }
+
+  .teste-sub{
+    margin-top: 1000px;
+   }
+
+   .depoimentos p{
+    margin-bottom: -100px;;
+   }
+
+   .carousel {
+    overflow-x: auto; /* ou overflow-x: scroll; */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/***********BLUSH RESPONSIVO***********/
+
+.depoimentos .blush{
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(#0062ae , transparent 50%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+
+
+.depoimentos .blush.dois{
+  bottom: 1800px;
+  right: -240px;
+  animation: blushOpacidade4 10s linear infinite ;
+}
+
+@keyframes blushOpacidade4{
+  0%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+
+  50%{
+    opacity: 0.9;
+    transform:scale(0.9);
+  }
+  100%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+} 
+
+}
+
+@media (max-width: 450px) {
+  .carousel .item {
+      width: 80%; /* Reduz ainda mais a largura do item do carrossel para telas muito pequenas */
+  }
+
+  .depoimentos  {
+    padding: 20px;
+    font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+    margin-top: -1099px;
+    max-height: 220vh;
+     /* overflow-y: hidden;  */
+    
+  }
+ 
+  .depoimentos h3 {
+      padding: 6rem 5%; /* Reduz o preenchimento superior e inferior */
+      font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+      margin-bottom: -120px; /* Ajusta o espaçamento inferior */
+  }
+
+  .teste-sub{
+      padding: 6rem 5%; /* Reduz o preenchimento superior e inferior */
+      font-size: 2.2rem; /* Ajusta o tamanho da fonte */
+      margin-bottom: -90px; /* Ajusta o espaçamento inferior */
+  }
+
+  .teste-sub{
+    margin-top: 1180px;
+   }
+
+
+   .carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+    padding: 0rem 5%;
+    position: relative;
+    z-index: 999;
+  }
+
+  .carousel {
+    overflow-x: auto; /* ou overflow-x: scroll; */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+}
+
+
+/*************INVISTA*****************/
+.invista {
+  background-color: #19123c;
+  padding: 6rem 5%;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3), /* cor preta com 50% de transparência */
+    rgba(0, 0, 0, 0.3) /* cor preta com 50% de transparência */
+  ), url(../images/Lua.jpg); /* adicione sua imagem de fundo aqui */
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 100vh;
+  position: relative;
+  z-index: 999;
+  overflow-y: hidden;
+}
+
+
+.central-invista{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.titulo-invista{
+  color: #fff;  
+  font-size: 4rem;
+
+}
+
+.centro-invista{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 80px;
+  color:#fff
+}
+
+.container-invista{
+  margin-bottom: 50px;
+  overflow-y: hidden;
+
+}
+
+
+.container-invista{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  min-height: 65vh;
+  align-items: center;
+  justify-content: center;
+ 
+  
+  
+}
+
+.card-invista {
+  flex: 0 0 30%;
+  background-color: transparent; /* Cor branca com 50% de transparência */
+  backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: -5px 0px 0px 0px #237dcc7c;
+  min-height: 40vh;
+  
+  
+}
+
+.titulo-card{
+  margin: 0;
+  font-size: 3rem;
+  color: #fff;
+
+}
+
+.titulo-conteudo{
+  margin: 0;
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.card-invista p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #c1c1c1;
+}
+
+
+
+
+
+
+.btn-invista{
+  color: #fff;
+  background: linear-gradient(135deg, #5b287d, #322b6b, #0a0132);
+  text-decoration: none;
+  padding: 1.5rem 6rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  justify-content: center;
+
+}
+
+
+.btn-invista:hover {
+  background: linear-gradient(90deg, #cfae4b, #d27a0f);
+}
+
+
+@media (max-width: 768px) {
+  .titulo-invista {
+      font-size: 3rem;
+      
+  }
+  .centro-invista {
+      font-size: 1.2rem;
+  }
+  .card-invista {
+      width: 100%;
+  }
+  .titulo-card {
+      font-size: 2.5rem;
+  }
+  .titulo-conteudo {
+      font-size: 3.5rem;
+  }
+  .btn-invista {
+      font-size: 1.3rem;
+      
+  }
+
+  .invista{
+    max-height: 180vh;
+    padding: 4rem 5%;   
+      
+
+  }
+
+  .card-invista {
+    flex: 0 0 95%;
+    background-color: transparent; /* Cor branca com 50% de transparência */
+    backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: -5px 0px 0px 0px #237dcc7c;
+    min-height: 10vh;
+    margin-bottom: 15px;
+    
+    
+  }
+}
+
+@media (max-width: 450px) {
+
+  
+
+  .invista{
+    padding: 2rem 4%;
+
+  }
+  .titulo-invista {
+      font-size: 3.5rem;
+  }
+  .invista .centro-invista{
+     font-size: 1.8rem;
+      margin-bottom: 40px;
+  }
+  .card-invista {
+      width: 100%;
+  }
+  .titulo-card {
+      font-size: 2.6rem;
+  }
+  .titulo-conteudo {
+      font-size: 2.5rem;
+  }
+  .btn-invista {
+      font-size: 1.1rem;
+      padding: 1rem 1rem;
+      
+  }
+
+  .invista{
+    max-height: 180vh;
+    padding: 6rem 5%;   
+      
+
+  }
+
+  .card-invista {
+    flex: 0 0 95%;
+    background-color: transparent; /* Cor branca com 50% de transparência */
+    backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: -5px 0px 0px 0px #237dcc7c;
+    min-height: 10vh;
+    margin-bottom: 15px;
+    
+    
+  }
+  
+}
+
+
+/******************************************/
+.oficial {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+  -webkit-clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+  clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+  height: 50px;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border: 0 solid;
+  overflow: hidden;
+}
+
+.oficial svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.oficial span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.oficial:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.oficial:hover span {
+  transform: translateX(7px);
+}
+
+
+/*************************************************************/
+
+.teste2 {
+  border-radius: .25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  -webkit-clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+  clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+  height: 40px;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: .2s .1s;
+  background-image: linear-gradient(90deg,#1c1c1c,#6220fb);
+  border: 0 solid;
+  overflow: hidden;
+}
+
+.teste2:hover {
+  cursor: pointer;
+  transition: all .3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+
+
+/********************************************/
+
+
+
+
+
+
+
+
+/*******************FOOTER********************/
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  /* background: linear-gradient(to right, #0c0333, #322b6b, #5b287d); */
+  background: linear-gradient(to right, #0c0333, #322b6b, #0c0333);
+  /* background: linear-gradient(135deg, #0c0333, #322b6b, #0c0333); */
+  color: #fff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.row{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col{
+  flex-basis: 25%;
+  padding: 10px;
+  
+}
+
+
+.col:nth-child(2), .col:nth-child(3){
+  flex-basis: 15%;
+}
+
+.logo-footer{
+  width: 180px;
+  margin-bottom: 30px;
+  transform: scale(1.1);  
+}
+
+.col h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 4vh;
+  overflow-y: hidden;
+}
+
+.email-id{
+  width: fit-content;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+ul li{
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+
+ul li a:hover{
+  color: #0062ae;
+}
+
+.social-icons .fa-whatsapp,
+.social-icons .fa-instagram {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 40px;
+   font-size: 20px;
+   color: #000;
+   background: #fff;
+   margin-right: 15px;
+   cursor: pointer;
+}
+
+hr{
+  width: 90%;
+  border: 0;
+  border-bottom:1px solid #ccc;
+  margin: 20px auto;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.underline{
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top:25px;
+  left: 0;
+  overflow: hidden;
+}
+
+.underline span{
+  width: 15px;
+  height: 100%;
+  background: #5b287d;
+  border-radius: 3px;
+  position: absolute;
+  top:0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+  0%{
+      left: -20px;
+  }
+
+  100%{
+      left: 100%;
+  }
+}
+
+@media (max-width: 700px){
+  footer{
+      bottom: unset;
+  }
+
+  .col{
+      flex-basis: 100%;
+  }
+
+  .col:nth-child(2), .col:nth-child(3){
+      flex-basis: 100%;
+  }
+
+}
+
+
+
+/************************************/
+
+
+
+
+
+
+/***************************************************/
+
+
+
+
+
+  /**************************************/
+  
+    
+
+
+   
+
+
+
+
+
+
+
